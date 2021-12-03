@@ -1,4 +1,4 @@
-def count(ins: list[str], col) -> tuple[int, int]:
+def count(ins: list[str], col: int) -> tuple[int, int]:
     ones = len([1 for row in range(len(ins)) if ins[row][col] == "1"])
     return ones, len(ins) - ones
 

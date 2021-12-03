@@ -1,6 +1,3 @@
-Instructions = list[tuple[str, int]]
-
-
 def part1(ins):
     h = 0
     v = 0
