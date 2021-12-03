@@ -9,7 +9,7 @@ def filter_col_type(rep: list[str], col: int, x: str):
 
 def rating(ins: list[str], msb: str, lsb: str, col: int = 0):
     if len(ins) == 1:
-        return int(ins.pop(), 2)
+        return int(ins[0], 2)
     ones, zeros = count(ins, col)
     if (ones > zeros) or (ones == zeros):
         return rating(filter_col_type(ins, col, msb), msb, lsb, col + 1)

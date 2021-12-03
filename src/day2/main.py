@@ -1,37 +1,42 @@
-def part1(ins: list[str]):
+Instructions = list[tuple[str, int]]
+
+
+def part1(ins):
     h = 0
     v = 0
-    for ii in ins:
-        [a, b] = ii.split(" ")
+    for a, b in ins:
         match a:
             case "forward":
-                h += int(b)
+                h += b
             case "down":
-                v += int(b)
+                v += b
             case "up":
-                v -= int(b)
+                v -= b
     return h * v
 
 
-def part2(ins: list[str]):
+def part2(ins):
     h = 0
     v = 0
     aim = 0
-    for ii in ins:
-        [a, b] = ii.split(" ")
+    for a, b in ins:
         match a:
             case "forward":
-                h += int(b)
-                v +=  aim * int(b)
+                h += b
+                v +=  aim * b
             case "down":
-                aim += int(b)
+                aim += b
             case "up":
-                aim -= int(b)
+                aim -= b
     return h * v
 
 
+
 if __name__ == "__main__":
+    def parse(line: str):
+        [a, b] = line.split(" ")
+        return a, int(b)
     with open("input.txt") as f:
-        input = [n for n in f.readlines()]
+        input = [parse(l) for l in f.readlines()]
     print(f"part 1: {part1(input)}")
     print(f"part 2: {part2(input)}")
