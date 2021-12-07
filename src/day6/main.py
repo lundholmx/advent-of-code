@@ -4,14 +4,13 @@ from collections import Counter
 def solve(input: list[int], ndays: int = 80) -> int:
     counts = {a:b for a, b in Counter(input).items()}
     for _ in range(ndays):
-        n_resets = counts.get(0, 0)
         nc = {
             internal-1: count
             for internal, count in counts.items()
             if internal > 0
         }
-        nc[8] = n_resets
-        nc[6] = nc.get(6, 0) + n_resets
+        nc[8] = counts.get(0, 0)
+        nc[6] = nc.get(6, 0) + counts.get(0, 0)
         counts = nc
     return sum([v for v in counts.values()])
 
