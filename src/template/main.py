@@ -1,3 +1,15 @@
+class Todo:
+    def __init__(self):
+        pass
+
+    def meth(self) -> None:
+        pass
+
+    @classmethod
+    def classmeth(cls):
+        pass
+
+
 def part1(input) -> int:
     return -1
 
