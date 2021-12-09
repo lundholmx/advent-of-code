@@ -10,6 +10,10 @@ class Todo:
         pass
 
 
+def func(input) -> None:
+    pass
+
+
 def part1(input) -> int:
     return -1
 

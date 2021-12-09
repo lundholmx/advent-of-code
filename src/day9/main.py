@@ -7,32 +7,30 @@ class HeightMap:
         self.ylen = len(map)
         self.xlen = len(map[0])
 
-    def get_lows(self) -> list[int]:
-        lows = []
+    def _iter(self):
         for y in range(self.ylen):
             for x in range(self.xlen):
-                val = self.get_at(x, y)
-                adj = self._adj_values(x, y)
-                if all([b > val for b in adj]):
-                    lows.append(val)
+                yield (x, y)
+
+    def get_lows(self) -> list[int]:
+        lows = []
+        for x, y in self._iter():
+            val = self.get_at(x, y)
+            adj = self._adj_values(x, y)
+            if all([b > val for b in adj]):
+                lows.append(val)
         return lows
 
     def get_basins(self) -> list[list[int]]:
         basins = []
-
-        def contains(x, y) -> bool:
-            for basin in basins:
-                for a, b in basin:
-                    if x == a and y == b:
-                        return True
-            return False
-
-        for y in range(self.ylen):
-            for x in range(self.xlen):
-                if contains(x, y):
-                    continue
-                if basin := self.basin(x, y):
-                    basins.append(basin)
+        visited = set()
+        for x, y in self._iter():
+            if (x, y) in visited:
+                continue
+            if basin := self.basin(x, y):
+                basins.append(basin)
+                for c in basin:
+                    visited.add(c)
         return basins
 
     def basin(self, x: int, y: int, visited=None) -> Optional[list[int]]:
@@ -53,16 +51,7 @@ class HeightMap:
         return self.map[y][x]
 
     def _adj_values(self, x: int, y: int) -> list[int]:
-        l = []
-        if x < self.xlen - 1:
-            l.append(self.map[y][x + 1])
-        if x >= 1:
-            l.append(self.map[y][x - 1])
-        if y < self.ylen - 1:
-            l.append(self.map[y + 1][x])
-        if y >= 1:
-            l.append(self.map[y - 1][x])
-        return l
+        return [self.get_at(a, b) for a, b in self._adj_coords(x, y)]
 
     def _adj_coords(self, x: int, y: int) -> list[tuple[int, int]]:
         l = []
