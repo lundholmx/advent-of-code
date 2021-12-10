@@ -33,17 +33,17 @@ class HeightMap:
                     visited.add(c)
         return basins
 
-    def basin(self, x: int, y: int, visited=None) -> Optional[list[int]]:
+    def basin(self, x: int, y: int) -> Optional[list[int]]:
         if self.get_at(x, y) == 9:
             return None
-        visited = []
+        visited = set()
         self._rec_basin(x, y, visited)
-        return [c for c in set(visited)]  # unique
+        return list(visited)
 
-    def _rec_basin(self, x: int, y: int, visited):
+    def _rec_basin(self, x: int, y: int, visited: set):
         if self.get_at(x, y) == 9:
             return
-        visited.append((x, y))
+        visited.add((x, y))
         for a, b in filter(lambda c: c not in visited, self._adj_coords(x, y)):
             self._rec_basin(a, b, visited)
 
@@ -77,8 +77,8 @@ def part2(map: HeightMap) -> int:
 
 if __name__ == "__main__":
     with open("input.txt") as f:
-        height_map = HeightMap(
+        map = HeightMap(
             [[int(n) for n in line.strip()] for line in f.readlines()]
         )
-    print(f"part 1: {part1(height_map)}")
-    print(f"part 2: {part2(height_map)}")
+    print(f"part 1: {part1(map)}")
+    print(f"part 2: {part2(map)}")
