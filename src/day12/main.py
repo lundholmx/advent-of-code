@@ -1,7 +1,8 @@
 from collections import Counter
+from abc import ABC, abstractmethod
 
 
-class Node:
+class Node(ABC):
     def __init__(self, value: str):
         self.value = value
         self.small = value.lower() == value
@@ -10,8 +11,14 @@ class Node:
     def connect(self, node):
         if not any(n.value == node.value for n in self.connected):
             self.connected.append(node)
+    
+    @abstractmethod
+    def paths(self, acc: list, path: list[str]):
+        raise NotImplementedError
 
-    def paths_v1(self, acc: list, path: list[str]):
+
+class NodeV1(Node):
+    def paths(self, acc: list, path: list[str]):
         if self.small and self.value in path:
             return
         this = list(e for e in path) + [self.value]
@@ -19,9 +26,11 @@ class Node:
         if self.value == "end":
             return
         for n in self.connected:
-            n.paths_v1(acc, this)
+            n.paths(acc, this)
 
-    def paths_v2(self, acc: list, path: list[str]):
+
+class NodeV2(Node):
+    def paths(self, acc: list, path: list[str]):
         if self.value == "start" and self.value in path:
             return
         counts = Counter([p for p in path if p.lower() == p])
@@ -36,7 +45,7 @@ class Node:
         if self.value == "end":
             return
         for n in self.connected:
-            n.paths_v2(acc, this)
+            n.paths(acc, this)
 
 
 def filter_valid(paths: list[list[str]]) -> list[list[str]]:
@@ -47,25 +56,20 @@ class Graph:
     def __init__(self, start: Node):
         self.start = start
 
-    def paths_v1(self):
+    def paths(self):
         acc = []
-        self.start.paths_v1(acc, [])
-        return filter_valid(acc)
-
-    def paths_v2(self):
-        acc = []
-        self.start.paths_v2(acc, [])
+        self.start.paths(acc, [])
         return filter_valid(acc)
 
 
-def build(lines: list[str]) -> Graph:
+def build(lines: list[str], cls) -> Graph:
     nodes = {}
     for line in lines:
         [a, b] = line.split("-")
-        node_a = nodes.get(a, Node(a))
+        node_a = nodes.get(a, cls(a))
         if not a in nodes:
             nodes[a] = node_a
-        node_b = nodes.get(b, Node(b))
+        node_b = nodes.get(b, cls(b))
         if not b in nodes:
             nodes[b] = node_b
         node_a.connect(node_b)
@@ -74,15 +78,15 @@ def build(lines: list[str]) -> Graph:
 
 
 def part1(graph: Graph) -> int:
-    return len(graph.paths_v1())
+    return len(graph.paths())
 
 
 def part2(graph: Graph) -> int:
-    return len(graph.paths_v2())
+    return len(graph.paths())
 
 
 if __name__ == "__main__":
     with open("input.txt") as f:
-        graph = build([l.strip() for l in f.readlines()])
-    print(f"part 1: {part1(graph)}")
-    print(f"part 2: {part2(graph)}")
+        lines = [l.strip() for l in f.readlines()]
+    print(f"part 1: {part1(build(lines, NodeV1))}")
+    print(f"part 2: {part2(build(lines, NodeV2))}")

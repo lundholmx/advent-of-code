@@ -28,7 +28,6 @@ def part2(ins):
     return h * v
 
 
-
 if __name__ == "__main__":
     def parse(line: str):
         [a, b] = line.split(" ")
