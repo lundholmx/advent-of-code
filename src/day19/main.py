@@ -7,53 +7,53 @@ Coord = tuple[int, int, int]
 
 
 rotation_funcs = [
-    lambda x, y, z: (x,  y,  z),
-    lambda x, y, z: (x, -y,  z),
-    lambda x, y, z: (x,  y, -z),
+    lambda x, y, z: (x, y, z),
+    lambda x, y, z: (x, -y, z),
+    lambda x, y, z: (x, y, -z),
     lambda x, y, z: (x, -y, -z),
-    lambda x, y, z: (x,  z,  y),
-    lambda x, y, z: (x, -z,  y),
-    lambda x, y, z: (x,  z, -y),
+    lambda x, y, z: (x, z, y),
+    lambda x, y, z: (x, -z, y),
+    lambda x, y, z: (x, z, -y),
     lambda x, y, z: (x, -z, -y),
-    lambda x, y, z: (-x,  y,  z),
-    lambda x, y, z: (-x, -y,  z),
-    lambda x, y, z: (-x,  y, -z),
+    lambda x, y, z: (-x, y, z),
+    lambda x, y, z: (-x, -y, z),
+    lambda x, y, z: (-x, y, -z),
     lambda x, y, z: (-x, -y, -z),
-    lambda x, y, z: (-x,  z,  y),
-    lambda x, y, z: (-x, -z,  y),
-    lambda x, y, z: (-x,  z, -y),
+    lambda x, y, z: (-x, z, y),
+    lambda x, y, z: (-x, -z, y),
+    lambda x, y, z: (-x, z, -y),
     lambda x, y, z: (-x, -z, -y),
-    lambda x, y, z: (y,  x,  z),
-    lambda x, y, z: (y, -x,  z),
-    lambda x, y, z: (y,  x, -z),
+    lambda x, y, z: (y, x, z),
+    lambda x, y, z: (y, -x, z),
+    lambda x, y, z: (y, x, -z),
     lambda x, y, z: (y, -x, -z),
-    lambda x, y, z: (y,  z,  x),
-    lambda x, y, z: (y, -z,  x),
-    lambda x, y, z: (y,  z, -x),
+    lambda x, y, z: (y, z, x),
+    lambda x, y, z: (y, -z, x),
+    lambda x, y, z: (y, z, -x),
     lambda x, y, z: (y, -z, -x),
-    lambda x, y, z: (-y,  x,  z),
-    lambda x, y, z: (-y, -x,  z),
-    lambda x, y, z: (-y,  x, -z),
+    lambda x, y, z: (-y, x, z),
+    lambda x, y, z: (-y, -x, z),
+    lambda x, y, z: (-y, x, -z),
     lambda x, y, z: (-y, -x, -z),
-    lambda x, y, z: (-y,  z,  x),
-    lambda x, y, z: (-y, -z,  x),
-    lambda x, y, z: (-y,  z, -x),
+    lambda x, y, z: (-y, z, x),
+    lambda x, y, z: (-y, -z, x),
+    lambda x, y, z: (-y, z, -x),
     lambda x, y, z: (-y, -z, -x),
-    lambda x, y, z: (z,  x,  y),
-    lambda x, y, z: (z, -x,  y),
-    lambda x, y, z: (z,  x, -y),
+    lambda x, y, z: (z, x, y),
+    lambda x, y, z: (z, -x, y),
+    lambda x, y, z: (z, x, -y),
     lambda x, y, z: (z, -x, -y),
-    lambda x, y, z: (z,  y,  x),
-    lambda x, y, z: (z, -y,  x),
-    lambda x, y, z: (z,  y, -x),
+    lambda x, y, z: (z, y, x),
+    lambda x, y, z: (z, -y, x),
+    lambda x, y, z: (z, y, -x),
     lambda x, y, z: (z, -y, -x),
-    lambda x, y, z: (-z,  x,  y),
-    lambda x, y, z: (-z, -x,  y),
-    lambda x, y, z: (-z,  x, -y),
+    lambda x, y, z: (-z, x, y),
+    lambda x, y, z: (-z, -x, y),
+    lambda x, y, z: (-z, x, -y),
     lambda x, y, z: (-z, -x, -y),
-    lambda x, y, z: (-z,  y,  x),
-    lambda x, y, z: (-z, -y,  x),
-    lambda x, y, z: (-z,  y, -x),
+    lambda x, y, z: (-z, y, x),
+    lambda x, y, z: (-z, -y, x),
+    lambda x, y, z: (-z, y, -x),
     lambda x, y, z: (-z, -y, -x),
 ]
 
@@ -61,7 +61,6 @@ rotation_funcs = [
 def rotations(coord: Coord):
     x, y, z = coord
     return [f(x, y, z) for f in rotation_funcs]
-
 
 
 @dataclass
@@ -79,15 +78,14 @@ def check(sc_a: Scanner, sc_b: Scanner) -> Optional[tuple[Scanner, Coord]]:
         for xp, yp, zp in sc_b.reports:
             for f in rotation_funcs:
                 a, b, c = f(xp, yp, zp)
-                r1 = x+a
-                r2 = y+b
-                r3 = z+c
+                r1 = x + a
+                r2 = y + b
+                r3 = z + c
                 co = (r1, r2, r3)
                 results[co] += 1
                 if results[co] == 12:
                     rs = [
-                        (r1-a, r2-b, r3-c)
-                        for a, b, c in rotate(sc_b.reports, f)
+                        (r1 - a, r2 - b, r3 - c) for a, b, c in rotate(sc_b.reports, f)
                     ]
                     return Scanner(rs), co
 
@@ -123,14 +121,11 @@ def part1(scanners: list[Scanner]) -> tuple[int, list[Coord]]:
 
 
 def manhattan(p1: Coord, p2: Coord) -> int:
-    return sum(abs(a-b) for a, b in zip(p1, p2))
+    return sum(abs(a - b) for a, b in zip(p1, p2))
 
 
 def part2(ps: list[Coord]) -> int:
-    return max([
-        manhattan(p1, p2)
-        for p1, p2 in it.combinations(ps, 2)
-    ])
+    return max([manhattan(p1, p2) for p1, p2 in it.combinations(ps, 2)])
 
 
 def read_input(lines: list[str]) -> list[Scanner]:
