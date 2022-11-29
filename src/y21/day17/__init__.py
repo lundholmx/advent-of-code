@@ -65,7 +65,7 @@ def part2(probe: Probe) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day17/input.txt") as f:
         line = f.read().strip()
         xtarget, ytarget = parse(line)
     probe = Probe(xtarget, ytarget)

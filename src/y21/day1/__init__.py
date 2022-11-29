@@ -3,7 +3,9 @@ def increases(nums: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day1/input.txt") as f:
         nums = [int(n) for n in f.readlines()]
     print(f"part 1: {increases(nums)}")
-    print(f"part 2: {increases([nums[i] + nums[i + 1] + nums[i + 2] for i in range(len(nums) - 2)])}")
+    print(
+        f"part 2: {increases([nums[i] + nums[i + 1] + nums[i + 2] for i in range(len(nums) - 2)])}"
+    )

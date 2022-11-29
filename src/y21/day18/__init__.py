@@ -4,7 +4,7 @@ import itertools
 
 
 class Node:
-    def __init__(self, parent = None, value: int = None):
+    def __init__(self, parent=None, value: int = None):
         self.parent = parent
         self.value: Optional[int] = value
         self.left = None
@@ -156,7 +156,7 @@ def part2(lines: list) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day18/input.txt") as f:
         input = [eval(l.strip()) for l in f.readlines()]
     print(f"part 1: {part1(input)}")
     print(f"part 2: {part2(input)}")

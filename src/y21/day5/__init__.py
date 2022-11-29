@@ -57,7 +57,7 @@ def part2(segments: list[Segment]) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day5/input.txt") as f:
         segments = [Segment.from_str(l.strip()) for l in f.readlines()]
     print(f"part 1: {part1(segments)}")
     print(f"part 2: {part2(segments)}")

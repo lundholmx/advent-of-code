@@ -57,7 +57,7 @@ def part2(input: list[str]) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day10/input.txt") as f:
         input = [l.strip() for l in f.readlines()]
     in2, p1 = part1(input)
     print(f"part 1: {p1}")

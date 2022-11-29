@@ -20,7 +20,7 @@ def part2(ins):
         match a:
             case "forward":
                 h += b
-                v +=  aim * b
+                v += aim * b
             case "down":
                 aim += b
             case "up":
@@ -29,10 +29,12 @@ def part2(ins):
 
 
 if __name__ == "__main__":
+
     def parse(line: str):
         [a, b] = line.split(" ")
         return a, int(b)
-    with open("input.txt") as f:
+
+    with open("y21/day2/input.txt") as f:
         input = [parse(l) for l in f.readlines()]
     print(f"part 1: {part1(input)}")
     print(f"part 2: {part2(input)}")

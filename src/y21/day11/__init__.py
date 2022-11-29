@@ -78,7 +78,7 @@ def part2(cavern: Cavern) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day11/input.txt") as f:
         map = Cavern.from_str(f.read())
     print(f"part 1: {part1(map)}")
     print(f"part 2: {part2(map)}")

@@ -33,7 +33,7 @@ def calc(template: str, rules: dict[str, str], nsteps: int) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day14/input.txt") as f:
         template, rules = parse_input([l.strip() for l in f.readlines()])
     print(f"part 1: {calc(template, rules, 10)}")
     print(f"part 2: {calc(template, rules, 40)}")

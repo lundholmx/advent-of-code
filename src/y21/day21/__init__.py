@@ -65,7 +65,7 @@ def part2(p1: int, p2: int) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day21/input.txt") as f:
         lines = [l.strip() for l in f.readlines()]
     p1, p2 = int(lines[0].split()[4]), int(lines[1].split()[4])
     print(f"part 1: {part1(p1, p2)}")

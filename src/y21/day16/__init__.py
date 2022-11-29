@@ -177,7 +177,7 @@ def part2(hex: str) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day16/input.txt") as f:
         line = f.read()
     print(f"part 1: {part1(line)}")
     print(f"part 2: {part2(line)}")

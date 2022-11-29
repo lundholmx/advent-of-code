@@ -146,7 +146,7 @@ def read_input(lines: list[str]) -> list[Scanner]:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day19/input.txt") as f:
         scanners = read_input([l.strip() for l in f.readlines()])
     p1, positions = part1(scanners)
     print(f"part 1: {p1}")

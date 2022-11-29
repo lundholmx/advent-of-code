@@ -11,7 +11,7 @@ class Node(ABC):
     def connect(self, node):
         if not any(n.value == node.value for n in self.connected):
             self.connected.append(node)
-    
+
     @abstractmethod
     def paths(self, acc: list, path: list[str]):
         raise NotImplementedError
@@ -86,7 +86,7 @@ def part2(graph: Graph) -> int:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day12/input.txt") as f:
         lines = [l.strip() for l in f.readlines()]
     print(f"part 1: {part1(build(lines, NodeV1))}")
     print(f"part 2: {part2(build(lines, NodeV2))}")

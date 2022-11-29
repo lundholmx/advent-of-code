@@ -62,7 +62,7 @@ def read_input(lines: list[str]) -> list[Step]:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day22/input.txt") as f:
         input = [l.strip() for l in f.readlines()]
     steps = read_input(input)
     print(f"part 1: {part1(steps)}")

@@ -92,7 +92,7 @@ def read_input(lines: list[str]) -> tuple[str, Image]:
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day20/input.txt") as f:
         lines = [l.strip() for l in f.readlines()]
     algo, image = read_input(lines)
     print(f"part 1: {part1(algo, image)}")

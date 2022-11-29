@@ -64,12 +64,12 @@ def decode(signals: list[str], output: list[str]) -> int:
 
 
 def part2(pairs) -> int:
-    return sum([ decode(signal, output) for signal, output in pairs ])
+    return sum([decode(signal, output) for signal, output in pairs])
 
 
 if __name__ == "__main__":
     entries = []
-    with open("input.txt") as f:
+    with open("y21/day8/input.txt") as f:
         for line in f.readlines():
             [head, tail] = line.strip().split(" | ")
             entries.append((head.split(" "), tail.split(" ")))

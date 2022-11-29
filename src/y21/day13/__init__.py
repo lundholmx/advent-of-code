@@ -56,7 +56,7 @@ def part2(map: np.ndarray, folds: list[tuple[str, int]]):
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with open("y21/day13/input.txt") as f:
         map, folds = parse_input([l.strip() for l in f.readlines()])
     print(f"part 1: {part1(map, folds)}")
     print(f"part 2:")
