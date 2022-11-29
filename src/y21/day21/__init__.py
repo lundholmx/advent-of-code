@@ -1,5 +1,5 @@
-from functools import cache
 from dataclasses import dataclass
+from functools import cache
 
 
 def next_pos(pos: int, steps: int) -> int:

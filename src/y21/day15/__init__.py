@@ -1,6 +1,6 @@
-from collections import defaultdict
 import heapq
 import sys
+from collections import defaultdict
 
 Point = tuple[int, int]
 Map = list[list[int]]

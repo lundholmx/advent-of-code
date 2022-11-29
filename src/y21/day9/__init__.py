@@ -77,8 +77,6 @@ def part2(map: HeightMap) -> int:
 
 if __name__ == "__main__":
     with open("y21/day9/input.txt") as f:
-        map = HeightMap(
-            [[int(n) for n in line.strip()] for line in f.readlines()]
-        )
+        map = HeightMap([[int(n) for n in line.strip()] for line in f.readlines()])
     print(f"part 1: {part1(map)}")
     print(f"part 2: {part2(map)}")

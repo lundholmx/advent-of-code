@@ -1,6 +1,6 @@
+from functools import cached_property
 from itertools import repeat
 from typing import Counter
-from functools import cached_property
 
 
 class Segment:

@@ -1,5 +1,5 @@
-import statistics
 import math
+import statistics
 
 
 def part1(input: list[int]) -> int:

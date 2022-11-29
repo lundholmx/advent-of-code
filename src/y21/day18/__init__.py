@@ -1,6 +1,6 @@
-from typing import Optional, Union
-import math
 import itertools
+import math
+from typing import Optional, Union
 
 
 class Node:

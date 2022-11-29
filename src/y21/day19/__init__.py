@@ -1,7 +1,7 @@
 import itertools as it
 from collections import defaultdict
-from typing import Optional
 from dataclasses import dataclass
+from typing import Optional
 
 Coord = tuple[int, int, int]
 

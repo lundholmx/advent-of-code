@@ -1,7 +1,6 @@
 import abc
-from itertools import chain
 from functools import reduce
-
+from itertools import chain
 
 mapping = {
     "0": "0000",
@@ -118,7 +117,8 @@ class Transmission:
         return self._operator(version, type_id, tail, packets)
 
     def _literal(
-        self, version: int,
+        self,
+        version: int,
         type_id: int,
         bits: str,
         packets: list[Packet],
@@ -137,7 +137,8 @@ class Transmission:
         return p, bits[ii:]
 
     def _operator(
-        self, version: int,
+        self,
+        version: int,
         type_id: int,
         bits: str,
         packets: list[Packet],
