@@ -1,3 +1,4 @@
+default: fmt test
 alias r := run
 
 export PYTHONPATH := "."

@@ -13,6 +13,9 @@ from lib import Input
 class Datac:
     field: Any
 
+    def method(self):
+        pass
+
 
 class Name:
     def __init__(self, field):
@@ -22,13 +25,14 @@ class Name:
     def cmethod(cls):
         return cls("field")
 
+    def method(self):
+        pass
+
 
 def convert(raw: Any):
     return f"raw:{raw}"
 
 
 if __name__ == "__main__":
-    items = Input("yYY/dayDD/input.txt", linetype="lines")\
-        .add_map(convert)\
-        .read()
+    items = Input("yYY/dayDD/input.txt", linetype="lines").add_map(convert).read()
     print("TODO")
