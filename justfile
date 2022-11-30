@@ -1,4 +1,4 @@
-default: fmt test
+default: fmt test check
 alias r := run
 
 export PYTHONPATH := "."
@@ -29,3 +29,6 @@ pipcompile:
 fmt:
 	python -m black src
 	python -m isort src	
+
+check:
+	flake8 src

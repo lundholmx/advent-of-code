@@ -39,11 +39,7 @@ class Cavern:
 
     def _adj(self, c: int, r: int):
         coords = [(x, y) for x in range(-1, 2) for y in range(-1, 2)]
-        return [
-            (x + c, y + r)
-            for x, y in coords
-            if self._within(x + c, y + r) and (x, y) != (0, 0)
-        ]
+        return [(x + c, y + r) for x, y in coords if self._within(x + c, y + r) and (x, y) != (0, 0)]
 
     def _within(self, x: int, y: int) -> bool:
         return x >= 0 and x < self.xlen and y >= 0 and y < self.ylen

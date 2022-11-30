@@ -5,11 +5,7 @@ def test_read_single_line():
     def toupper(s: str):
         return s.upper()
 
-    items = (
-        Input("tests/testdata/singleline.txt", linetype="single")
-        .add_map(toupper)
-        .read()
-    )
+    items = Input("tests/testdata/singleline.txt", linetype="single").add_map(toupper).read()
     assert len(items) == 4
     assert items[0] == "ONE"
 

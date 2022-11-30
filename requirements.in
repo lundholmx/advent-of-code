@@ -2,3 +2,4 @@ pytest
 black
 isort
 numpy
+flake8

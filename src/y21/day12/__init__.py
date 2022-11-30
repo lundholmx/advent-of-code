@@ -67,10 +67,10 @@ def build(lines: list[str], cls) -> Graph:
     for line in lines:
         [a, b] = line.split("-")
         node_a = nodes.get(a, cls(a))
-        if not a in nodes:
+        if a not in nodes:
             nodes[a] = node_a
         node_b = nodes.get(b, cls(b))
-        if not b in nodes:
+        if b not in nodes:
             nodes[b] = node_b
         node_a.connect(node_b)
         node_b.connect(node_a)

@@ -49,9 +49,7 @@ def repair(line: str) -> str:
 
 def part2(input: list[str]) -> int:
     points = {")": 1, "]": 2, "}": 3, ">": 4}
-    scores = [
-        reduce(lambda acc, c: acc * 5 + points[c], repair(line), 0) for line in input
-    ]
+    scores = [reduce(lambda acc, c: acc * 5 + points[c], repair(line), 0) for line in input]
     s = sorted(scores)
     return s[len(s) // 2]
 

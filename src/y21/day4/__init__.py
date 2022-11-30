@@ -21,9 +21,7 @@ class Board:
     def check(self):
         if any([all([s for _, s in row]) for row in self.board]):
             return True
-        return any(
-            [all([self.board[row][col][1] for row in range(5)]) for col in range(5)]
-        )
+        return any([all([self.board[row][col][1] for row in range(5)]) for col in range(5)])
 
     def score(self, num: int):
         return num * sum([sum([n for n, m in row if not m]) for row in self.board])

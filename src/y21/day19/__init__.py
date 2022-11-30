@@ -84,9 +84,7 @@ def check(sc_a: Scanner, sc_b: Scanner) -> Optional[tuple[Scanner, Coord]]:
                 co = (r1, r2, r3)
                 results[co] += 1
                 if results[co] == 12:
-                    rs = [
-                        (r1 - a, r2 - b, r3 - c) for a, b, c in rotate(sc_b.reports, f)
-                    ]
+                    rs = [(r1 - a, r2 - b, r3 - c) for a, b, c in rotate(sc_b.reports, f)]
                     return Scanner(rs), co
 
 
