@@ -1,0 +1,3 @@
+
+day1:
+	bash ./day1/day1.sh ./day1/input.txt
