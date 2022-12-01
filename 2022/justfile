@@ -1,6 +1,10 @@
 
 day1:
-	bash day1/day1.sh day1/input.txt
+	cd day1 && bash day1.sh input.txt
+
+# Prepared solutions
 
 awk:
-	awk -f day2/day2.awk < day2/input.txt
+	cd awk && awk -f day2.awk < input.txt
+fsharp:
+	cd fsharp && dotnet run

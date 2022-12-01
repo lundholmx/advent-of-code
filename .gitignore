@@ -25,13 +25,6 @@ ENV/
 env.bak/
 venv.bak/
 
-# Rope project settings
-.ropeproject
-
-# mypy
-.mypy_cache/
-.dmypy.json
-dmypy.json
-
-# Pyre type checker
-.pyre/
+# .NET
+bin/
+obj/
