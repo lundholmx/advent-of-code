@@ -6,6 +6,6 @@ def increases(nums: list[int]) -> int:
 
 
 if __name__ == "__main__":
-    nums = Input("y21/day1/input.txt").add_map(int).read()
+    nums = Input("y21/day1/input.txt").map(int).read()
     print(f"part 1: {increases(nums)}")
     print(f"part 2: {increases([nums[i] + nums[i + 1] + nums[i + 2] for i in range(len(nums) - 2)])}")

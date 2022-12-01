@@ -5,7 +5,7 @@ def test_read_single_line():
     def toupper(s: str):
         return s.upper()
 
-    items = Input("tests/testdata/singleline.txt", linetype="single").add_map(toupper).read()
+    items = Input("tests/testdata/singleline.txt", linetype="single").map(toupper).read()
     assert len(items) == 4
     assert items[0] == "ONE"
 
@@ -16,14 +16,22 @@ def test_read_single_item():
 
 
 def test_read_multiline():
-    item = Input("tests/testdata/multiline.txt").read()
-    assert len(item) == 5
+    items = Input("tests/testdata/multiline.txt").read()
+    assert len(items) == 5
 
 
 def test_read_multiline_maps():
     def trim(s):
         return s.strip()
 
-    item = Input("tests/testdata/multiline.txt").add_map(trim).add_map(int).read()
-    assert len(item) == 5
-    assert item[0] == 1
+    items = Input("tests/testdata/multiline.txt").map(trim).map(int).read()
+    assert len(items) == 5
+    assert items[0] == 1
+
+
+def test_filter():
+    def greater(n):
+        return n > 2
+
+    items = Input("tests/testdata/multiline.txt").map(int).filter(greater).read()
+    assert len(items) == 3

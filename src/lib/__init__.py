@@ -2,6 +2,7 @@ from typing import Any, Callable, Literal
 
 LineType = Literal["multi", "single"]
 MapFunc = Callable[[Any], Any]
+FilterFunc = Callable[[Any], bool]
 
 
 class Input:
@@ -15,7 +16,7 @@ class Input:
         self.filepath = filepath
         self._type = linetype
         self.split_token = split_token
-        self._pipeline: list[MapFunc] = []
+        self._pipeline = []
 
     def read(self) -> [Any]:
         with open(self.filepath) as f:
@@ -24,14 +25,24 @@ class Input:
         if self._type == "single":
             lines = lines[0].split(self.split_token)
 
-        items = [self._map(item.rstrip()) for item in lines]
+        items = [line.rstrip() for line in lines]
+        for (pipe_type, f) in self._pipeline:
+            if pipe_type == "map":
+                items = [f(item) for item in items]
+            elif pipe_type == "filter":
+                items = [item for item in items if f(item)]
+
         return items
 
     def read_single(self) -> Any:
         return self.read().pop(0)
 
-    def add_map(self, f: MapFunc) -> "Input":
-        self._pipeline.append(f)
+    def map(self, f: MapFunc) -> "Input":
+        self._pipeline.append(("map", f))
+        return self
+
+    def filter(self, f: FilterFunc) -> "Input":
+        self._pipeline.append(("filter", f))
         return self
 
     def _map(self, item: Any) -> Any:
