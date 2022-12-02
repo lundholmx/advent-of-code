@@ -30,12 +30,12 @@ just run 12
 I had a different goal for 2022 - use as many languages as possible!
 
 Goals:
-- [x] Bash (day 1)
-- [ ] AWK
+- [x] Bash - day 1
+- [x] AWK - day 2
 - [ ] C
 - [ ] C#
 - [ ] F#
-- [ ] Lisp
+- [ ] Lisp (Clojure?)
 - [ ] Javascript
 - [ ] Haskell
 - [ ] Elixir
@@ -44,11 +44,13 @@ Goals:
 - [ ] Rust
 - [ ] Python
 - [ ] Julia
+- [ ] Nim
 
-[2022](./2022) should contain a recipy for each day to run.
+
+`./2022` should contain a recipy for each day to run.
 
 That is, use:
 ```sh
 cd 2022
-just run day13 # Run solution for day 13
+just run day1 # Run solution for day 1
 ```

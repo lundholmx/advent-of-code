@@ -6,17 +6,6 @@ export PYTHONPATH := "."
 run day:
 	cd src && python day{{ day }}/__init__.py
 
-add year day:
-	#!/usr/bin/env bash
-	set -e pipefail
-	dir="y{{ year }}/day{{ day }}"
-	cd src
-	mkdir -p $dir
-	cp template.py "$dir/__init__.py"
-	sed -i 's/YY/{{ year }}/' "$dir/__init__.py"
-	sed -i 's/DD/{{ day }}/' "$dir/__init__.py"
-	echo "" > "$dir/input.txt"
-
 # Run unit tests
 test:
 	cd src && python -m pytest tests/

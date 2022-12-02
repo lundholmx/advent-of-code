@@ -1,10 +1,12 @@
-
 day1:
 	cd day1 && bash day1.sh input.txt
+day2 infile="input.txt":
+	cd day2 && awk -f part1.awk < {{ infile }}
+	cd day2 && awk -f part2.awk < {{ infile }}
 
 # Prepared solutions
 
-awk:
-	cd awk && awk -f day2.awk < input.txt
 fsharp:
-	cd fsharp && dotnet run
+	cd fsharp && dotnet run input.txt
+haskell infile="input.txt":
+	cd haskell && runhaskell main.hs {{ infile }}
