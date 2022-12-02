@@ -1,0 +1,15 @@
+{
+  "name": "advent",
+  "version": "1.0.0",
+  "description": "Solution for a day of 2022.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "advent": "index.js"
+  },
+  "author": "Jonathan Lundholm",
+  "license": "ISC"
+}

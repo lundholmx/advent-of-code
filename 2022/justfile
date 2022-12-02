@@ -10,3 +10,5 @@ fsharp:
 	cd fsharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
+js infile="input.txt":
+	cd javascript && node . {{ infile }}
