@@ -1,0 +1,11 @@
+# miniconda environment file.
+# usage: conda env create -f environment.yml
+name: advent
+channels:
+  - default
+  - conda-forge
+dependencies:
+  - python=3.10
+  - nodejs=16
+  - elixir=1.14
+
