@@ -3,6 +3,8 @@ day1:
 day2 infile="input.txt":
 	cd day2 && awk -f part1.awk < {{ infile }}
 	cd day2 && awk -f part2.awk < {{ infile }}
+day3 infile="input.txt":
+	cd day3 && lein run {{ infile }}
 
 # Prepared solutions
 
@@ -12,5 +14,3 @@ haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
 js infile="input.txt":
 	cd javascript && node . {{ infile }}
-clojure infile="input.txt":
-	cd clojure && lein run {{ infile }}
