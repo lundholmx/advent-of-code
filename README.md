@@ -30,12 +30,12 @@ just run 12
 I had a different goal for 2022 - use as many languages as possible!
 
 Goals:
-- [x] Bash - day 1
-- [x] AWK - day 2
+- [x] Bash (day 1)
+- [x] AWK (day 2)
+- [x] Clojure (day 3)
 - [ ] C
 - [ ] C#
 - [ ] F#
-- [ ] Lisp (Clojure?)
 - [ ] Javascript
 - [ ] Haskell
 - [ ] Elixir
@@ -46,7 +46,6 @@ Goals:
 - [ ] Julia
 - [ ] Nim
 
-
 `./2022` should contain a recipy for each day to run.
 
 That is, use:
@@ -54,3 +53,7 @@ That is, use:
 cd 2022
 just run day1 # Run solution for day 1
 ```
+
+**NOTE** that solutions do not necessarily contain a proper project setup
+for a particular programming language/platform. This is to keep it as
+simple as possible to get started.
