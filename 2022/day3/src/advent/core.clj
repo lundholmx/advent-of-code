@@ -48,19 +48,22 @@
   (with-open [reader (io/reader filepath)]
     (reduce conj [] (line-seq reader))))
 
-(defn run
+(defn part1
   [lines]
-  (let [priorities (map priority lines)
-        groups (group lines)
-        ; groups (map str/join groups)]
+  (let [priorities (map priority lines)]
+    (println (reduce + priorities))))
+
+(defn part2
+  [lines]
+  (let [groups (group lines)
         groups (map group-intersect groups)
         groups (map #(score (first %)) groups)]
-    (println (reduce + priorities)) ; part 1
-    (println (reduce + groups)) ; part 2
-))
+    (println (reduce + groups))))
 
 (defn -main
   ([]
     (println "must provide input file as first argument"))
   ([infile]
-    (run (readLines infile))))
+    (let [lines (readLines infile)]
+      (part1 lines)
+      (part2 lines))))
