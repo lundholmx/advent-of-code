@@ -34,7 +34,6 @@ Goals:
 - [x] AWK (day 2)
 - [x] Clojure (day 3)
 - [x] Javascript (day 4)
-- [ ] C
 - [ ] C#
 - [ ] F#
 - [ ] Haskell

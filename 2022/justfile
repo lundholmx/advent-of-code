@@ -27,4 +27,6 @@ golang infile="input.txt":
 	cd golang && go run main.go {{ infile }}
 rust infile="input.txt":
 	cd rust && cargo run -- {{ infile }}
+lua infile="input.txt":
+	cd lua && lua main.lua < {{ infile }}
 
