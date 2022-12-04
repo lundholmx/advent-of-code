@@ -8,6 +8,8 @@ day2 infile="input.txt":
 	cd day2 && awk -f part2.awk < {{ infile }}
 day3 infile="input.txt":
 	cd day3 && lein run {{ infile }}
+day4 infile="input.txt":
+	cd day4 && node . {{ infile }}
 
 # Prepared solutions
 
@@ -15,5 +17,3 @@ fsharp:
 	cd fsharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
-js infile="input.txt":
-	cd javascript && node . {{ infile }}
