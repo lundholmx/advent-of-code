@@ -18,5 +18,7 @@ fsharp:
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
 julia infile="input.txt":
-	cd julia && julia main.jl
+	cd julia && julia main.jl {{ infile }}
+elixir infile="input.txt":
+	cd elixir && elixir main.exs {{ infile }}
 
