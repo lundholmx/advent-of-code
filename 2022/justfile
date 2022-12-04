@@ -15,6 +15,8 @@ day4 infile="input.txt":
 
 fsharp:
 	cd fsharp && dotnet run input.txt
+csharp:
+	cd csharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
 julia infile="input.txt":
