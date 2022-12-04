@@ -23,4 +23,6 @@ elixir infile="input.txt":
 	cd elixir && elixir main.exs {{ infile }}
 golang infile="input.txt":
 	cd golang && go run main.go {{ infile }}
+rust infile="input.txt":
+	cd rust && cargo run -- {{ infile }}
 
