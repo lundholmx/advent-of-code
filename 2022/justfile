@@ -17,3 +17,6 @@ fsharp:
 	cd fsharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
+julia infile="input.txt":
+	cd julia && julia main.jl
+
