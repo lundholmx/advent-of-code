@@ -10,6 +10,8 @@ day3 infile="input.txt":
 	cd day3 && lein run {{ infile }}
 day4 infile="input.txt":
 	cd day4 && node . {{ infile }}
+day5 infile="input.txt":
+	cd day5 && julia main.jl {{ infile }}
 
 # Prepared solutions
 
@@ -19,8 +21,6 @@ csharp:
 	cd csharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
-julia infile="input.txt":
-	cd julia && julia main.jl {{ infile }}
 elixir infile="input.txt":
 	cd elixir && elixir main.exs {{ infile }}
 golang infile="input.txt":

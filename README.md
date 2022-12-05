@@ -34,6 +34,7 @@ Goals:
 - [x] AWK (day 2)
 - [x] Clojure (day 3)
 - [x] Javascript (day 4)
+- [x] Julia (day 5)
 - [ ] C#
 - [ ] F#
 - [ ] Haskell
@@ -42,7 +43,6 @@ Goals:
 - [ ] Go
 - [ ] Rust
 - [ ] Python
-- [ ] Julia
 - [ ] Nim
 
 `./2022` should contain a recipy for each day to run.
