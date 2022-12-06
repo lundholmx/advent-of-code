@@ -17,8 +17,8 @@ day6 infile="input.txt":
 
 # Prepared solutions
 
-fsharp:
-	cd fsharp && dotnet run input.txt
+nim:
+	cd nim && nim compile main.nim && ./main input.txt
 csharp:
 	cd csharp && dotnet run input.txt
 haskell infile="input.txt":

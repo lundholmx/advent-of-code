@@ -36,7 +36,6 @@ Goals:
 - [x] Javascript (day 4)
 - [x] Julia (day 5)
 - [x] F# (day 6)
-- [ ] Scala
 - [ ] C#
 - [ ] Haskell
 - [ ] Elixir
@@ -45,6 +44,7 @@ Goals:
 - [ ] Rust
 - [ ] Python
 - [ ] Nim
+- [ ] Scala
 
 `./2022` should contain a recipy for each day to run.
 
