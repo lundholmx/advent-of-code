@@ -12,6 +12,8 @@ day4 infile="input.txt":
 	cd day4 && node . {{ infile }}
 day5 infile="input.txt":
 	cd day5 && julia main.jl {{ infile }}
+day6 infile="input.txt":
+	cd day6 && dotnet run {{ infile }}
 
 # Prepared solutions
 

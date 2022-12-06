@@ -35,8 +35,9 @@ Goals:
 - [x] Clojure (day 3)
 - [x] Javascript (day 4)
 - [x] Julia (day 5)
+- [x] F# (day 6)
+- [ ] Scala
 - [ ] C#
-- [ ] F#
 - [ ] Haskell
 - [ ] Elixir
 - [ ] Lua
