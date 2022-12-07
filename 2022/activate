@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Use to activate "virtual" environment.
+
+dir="$PWD"
+
+envdir="$PWD/.env"
+mkdir -p $envdir
+
+export PATH="$envdir/julia-1.8.3/bin:$PATH"
