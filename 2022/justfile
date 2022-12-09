@@ -37,17 +37,17 @@ day6 infile="input.txt":
 	cd day6 && dotnet run {{ infile }}
 day7 infile="input.txt":
 	cd day7 && scala main.sc {{ infile }}
+day8 infile="input.txt":
+	cd day8 && dotnet run {{ infile }}
+day9 infile="input.txt":
+	cd day9 && elixir main.exs {{ infile }}
 
 # Prepared solutions
 
 nim:
 	cd nim && nim compile main.nim && ./main input.txt
-csharp:
-	cd csharp && dotnet run input.txt
 haskell infile="input.txt":
 	cd haskell && runhaskell main.hs {{ infile }}
-elixir infile="input.txt":
-	cd elixir && elixir main.exs {{ infile }}
 golang infile="input.txt":
 	cd golang && go run main.go {{ infile }}
 rust infile="input.txt":

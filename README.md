@@ -37,9 +37,9 @@ Goals:
 - [x] Julia (day 5)
 - [x] F# (day 6)
 - [x] Scala (day 7)
-- [ ] C#
+- [x] C# (day 8)
+- [x] Elixir (day 9)
 - [ ] Haskell
-- [ ] Elixir
 - [ ] Lua
 - [ ] Go
 - [ ] Rust
