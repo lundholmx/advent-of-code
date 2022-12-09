@@ -51,7 +51,7 @@ Goals:
 That is, use:
 ```sh
 cd 2022
-just run day1 # Run solution for day 1
+just day1 # Run solution for day 1
 ```
 
 **NOTE** that solutions do not necessarily contain a proper project setup
