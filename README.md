@@ -39,7 +39,7 @@ Goals:
 - [x] Scala (day 7)
 - [x] C# (day 8)
 - [x] Elixir (day 9)
-- [ ] Haskell
+- [x] Haskell (day 10)
 - [ ] Lua
 - [ ] Go
 - [ ] Rust
