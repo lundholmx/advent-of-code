@@ -43,6 +43,8 @@ day9 infile="input.txt":
 	cd day9 && elixir main.exs {{ infile }}
 day10 infile="input.txt":
 	cd day10 && runhaskell main.hs {{ infile }}
+day11 infile="input.txt":
+	cd day11 && lua main.lua < {{ infile }}
 
 # Prepared solutions
 
@@ -52,6 +54,4 @@ golang infile="input.txt":
 	cd golang && go run main.go {{ infile }}
 rust infile="input.txt":
 	cd rust && cargo run -- {{ infile }}
-lua infile="input.txt":
-	cd lua && lua main.lua < {{ infile }}
 

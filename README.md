@@ -40,7 +40,7 @@ Goals:
 - [x] C# (day 8)
 - [x] Elixir (day 9)
 - [x] Haskell (day 10)
-- [ ] Lua
+- [x] Lua (day 11)
 - [ ] Go
 - [ ] Rust
 - [ ] Python
