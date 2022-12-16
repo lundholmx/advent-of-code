@@ -41,9 +41,9 @@ Goals:
 - [x] Elixir (day 9)
 - [x] Haskell (day 10)
 - [x] Lua (day 11)
+- [x] Python (day 12)
 - [ ] Go
 - [ ] Rust
-- [ ] Python
 - [ ] Nim
 
 `./2022` should contain a recipy for each day to run.
